@@ -1,0 +1,314 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:#050505;
+  color:white;
+}
+
+a{
+  text-decoration:none;
+  color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 5%;
+
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(10px);
+}
+
+.logo h1{
+  color:#ff2d2d;
+  font-size:38px;
+}
+
+.logo span{
+  color:#ddd;
+  font-size:14px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:40px;
+}
+
+.nav-links li a{
+  transition:.3s;
+}
+
+.nav-links li a:hover{
+  color:#ff2d2d;
+}
+
+.whatsapp-btn{
+  border:none;
+  background:#ff2d2d;
+  color:white;
+
+  padding:12px 20px;
+  border-radius:8px;
+
+  display:flex;
+  gap:8px;
+  align-items:center;
+
+  cursor:pointer;
+  transition:.3s;
+}
+
+.whatsapp-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+  min-height:90vh;
+  position:relative;
+
+  background:url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920")
+  center/cover no-repeat;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.9),
+    rgba(120,0,0,.6)
+  );
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:80px 5%;
+  gap:40px;
+}
+
+.hero-left{
+  flex:1;
+}
+
+.tagline{
+  color:#ff3b3b;
+  font-weight:700;
+  margin-bottom:20px;
+  font-size:22px;
+}
+
+.hero-left h1{
+  font-size:80px;
+  line-height:1.1;
+}
+
+.hero-left h1 span{
+  color:#ff2d2d;
+}
+
+.description{
+  max-width:600px;
+  margin-top:20px;
+  font-size:22px;
+  line-height:1.7;
+}
+
+.hero-btn{
+  margin-top:30px;
+
+  background:#ff2d2d;
+  border:none;
+
+  padding:15px 30px;
+  border-radius:10px;
+
+  color:white;
+  font-size:18px;
+
+  display:flex;
+  gap:10px;
+  align-items:center;
+
+  cursor:pointer;
+}
+
+/* CAR */
+
+.hero-right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-car{
+  width:100%;
+  max-width:650px;
+  object-fit:contain;
+
+  filter:drop-shadow(0 15px 30px rgba(0,0,0,.5));
+
+  animation:floatCar 3s ease-in-out infinite;
+}
+
+@keyframes floatCar{
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+
+/* ABOUT + CONTACT */
+
+.section{
+  position:relative;
+
+  padding:90px 10%;
+  text-align:center;
+
+  background:url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920")
+  center/cover no-repeat;
+}
+
+.section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.9),
+    rgba(120,0,0,.6)
+  );
+}
+
+.section > *{
+  position:relative;
+  z-index:2;
+}
+
+.section h2{
+  color:#ff2d2d;
+  margin-bottom:25px;
+  font-size:48px;
+}
+
+.section p{
+  max-width:900px;
+  margin:15px auto;
+  line-height:1.8;
+  color:#ddd;
+  font-size:20px;
+}
+
+/* CONTACT CARD */
+
+.contact-box{
+  max-width:700px;
+  margin:30px auto;
+  padding:30px;
+
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+.contact-box p{
+  font-size:22px;
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  padding:25px;
+  background:black;
+  color:#888;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav-links{
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-left h1{
+    font-size:48px;
+  }
+
+  .description{
+    font-size:16px;
+  }
+
+  .hero-car{
+    max-width:95%;
+    margin-top:20px;
+  }
+
+  .section h2{
+    font-size:34px;
+  }
+
+  .section p{
+    font-size:16px;
+  }
+
+  .contact-box p{
+    font-size:18px;
+  }
+
+  .hero-btn{
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
